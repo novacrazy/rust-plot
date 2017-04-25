@@ -4,20 +4,24 @@ pub mod dot;
 pub mod line;
 pub mod shape;
 
-/// Different styles of lines that can be drawn
+/// Different styles of lines that can be drawn.
+///
+/// Note that antialiased line styles can usually be drawn at fractional pixels,
+/// making them more suitable for detailed drawings.
+///
+/// Thick lines are drawn by placing dots at every point along the line,
+/// simulating a brush tool and giving a nice thick appearance.
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum LineStyle {
     /// A thin line
     Thin,
-    /// A thin line with anti-aliasing. Antialiased lines can be drawn at fractional pixels,
-    /// making them more suitable for detailed drawings.
+    /// A thin line with anti-aliasing.
     ThinAA,
-    /// A thick line drawn by placing many dots on top of each other
+    /// A thick line drawn by placing many dots on top of each other.
     Thick { width: f64, hardness: f64 },
-    /// A thick line with anti-aliasing. Antialiased lines can be drawn at fractional pixels,
-    /// making them more suitable for detailed drawings.
+    /// A thick line with anti-aliasing.
     ///
-    /// A thick line is drawn by placing many dots on top of each other.
+    /// A thick line drawn by placing many dots on top of each other.
     ThickAA { width: f64, hardness: f64 }
 }
 
