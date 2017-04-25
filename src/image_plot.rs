@@ -76,7 +76,7 @@ impl Plotter for ImagePlot {
     fn draw_pixel(&mut self, x: i64, y: i64, alpha: f64) {
         let (w, h) = (self.width() as i64, self.height() as i64);
 
-        if 0 <= x && x <= w && 0 <= y && y <= h {
+        if 0 <= x && x < w && 0 <= y && y < h {
             let x = x as u32;
             let y = (h - y - 1) as u32;
 
