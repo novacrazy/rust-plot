@@ -13,7 +13,10 @@ version = "0.12.4"
 
 [dependencies.nalgebra]
 optional = true
-version = "0.11.2"
+version = "0.12.0"
+
+[dependencies.softrender]
+path = "../rust-softrender"
 
 [dev-dependencies]
 rayon = "0.7.0"
